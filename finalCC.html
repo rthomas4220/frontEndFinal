@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="final.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+
+    <script>
+        
+        function gainWeight(){
+            var currentIntake = document.getElementById("calIntake").value;
+            currentIntake = Number(currentIntake)
+            currentIntake = currentIntake + 500;
+            document.getElementById("calculateAnswer").innerHTML = "To start your bulk, you should be eating around " + currentIntake + 
+            " calories a day. A caloric surplus is going ensure that you are gaining weight at a steady rate. Try eating more caloric dense foods, such as nuts, breads, pasta, and whole milk."
+        }
+
+        function loseWeight(){
+            var currentIntake = document.getElementById("calIntake").value;
+            currentIntake = Number(currentIntake)
+            currentIntake = currentIntake - 500;
+            if (currentIntake < 1501){
+                document.getElementById("calculateAnswer").innerHTML = "To start your cut, you should be eating around " + currentIntake + 
+                " calories a day. A caloric deficit is going ensure that you are losing weight at a steady rate. Try eating more caloric sparse foods, such as popcorn, lean meats, and almond milk. However, be careful because eating less than 1500 calories a day may not be the healthiest option, according to multiple research articles. ";
+
+            }
+            else {
+                document.getElementById("calculateAnswer").innerHTML = "To start your cut, you should be eating around " + currentIntake + 
+                " calories a day. A caloric deficit is going ensure that you are losing weight at a steady rate. Try eating more caloric sparse foods, such as popcorn, lean meats, and almond milk.";
+            }
+        }
+
+        function maintainWeight(){
+            var currentIntake = document.getElementById("calIntake").value;
+            currentIntake = Number(currentIntake)
+            document.getElementById("calculateAnswer").innerHTML = "Keep rolling. Eating " + currentIntake + " calories a day is going to ensure that you're maintaining a stable weight. No need to switch up what you're doing.";
+        }
+
+    </script>
+</head>
+<body>
+
+    <header class="header"> 
+
+        <a href="#" class="logo">GV.</a>
+
+        <nav class="navbar">
+            
+            <a href="finalHomePage.html" >Home</a>
+            <a href="finalCC.html" class="active">Calorie Counter</a>
+            <a href="lastPage.html">Workout Splits</a>
+            <a href="https://www.youtube.com/watch?v=1LsL9p2BWdM" target="_blank">Motivation</a>
+        </nav>
+
+    </header>
+
+    <center>
+        <div id="registrationDiv">
+            <h1>Calorie Counter </h1>
+            <br>
+
+                <input type="number" step="1" min="1000" name="calIntake" id="calIntake" placeholder="Current Calorie Intake" required>
+                <br>
+                <br>
+                <button onclick="gainWeight()" id="gain">Gain</button>
+                <button onclick="loseWeight()" id="lose">Lose</button>
+                <button onclick="maintainWeight()" id="maintain">Maintain</button>
+                <br>
+                <br>
+                
+            <div id="answerDiv">
+                <p id="calculateAnswer">Enter information above to generate answer</p>
+            </div>
+        </div>
+    </center>
+
+    <footer>
+        <hr>
+        <p>Author: RJ Thomas <br> &copy; copyrights not reserved, this is just for fun <a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+    </footer>
+
+</body>
+</html>

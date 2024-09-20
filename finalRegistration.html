@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="final.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gainsville Registration</title>
+
+    <script>
+
+        function registrationPage(form) {
+
+            var username = document.getElementById("gvUsername").value;
+            var password = document.getElementById("gvPassword").value;
+
+            //validate username has no special characters
+            if (username.includes("%") || username.includes("!") || username.includes("@") || username.includes("&") || username.includes("#") || username.includes("*")) {
+                alert("Special Characters are not allowed in the username field. Please try again.");
+                return false;
+            }
+
+            //validate username has no numbers
+            if (username.includes("0") || username.includes("1") || username.includes("2") || username.includes("3") || username.includes("4") || username.includes("5") || username.includes("6") || username.includes("7") || username.includes("8") || username.includes("9")) {
+                alert("Numbers are not allowed in the username field. Please try again.");
+                return false;
+            }
+
+            //validate username has no spaces
+            if (username.includes(" ")) {
+                alert("Spaces are not allowed in the username field. Please try again.");
+                return false;
+            }
+
+            //validate password has no spaces
+            if (password.includes(" ")) {
+                alert("Spaces are not allowed in the password field. Please try again.");
+                return false;
+            }
+
+            //Save the username and password to local storage
+            localStorage.setItem(username, password);
+            alert("Welcome to Gainsville, Enjoy!");
+            form.action = "finalHomePage.html";
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+
+    <center>
+        <div id="registrationDiv">
+            <h2>Sign Up For</h2>
+            <h2>Gainsville!</h2>
+            <form onsubmit="return registrationPage(this)">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <br>
+                <br>
+                <input type="text" name="gvUsername" id="gvUsername" placeholder="Create a Username" title="Please don't use special characters or numbers (I'm looking at you, spacebar)." required>
+                <br>
+                <br>
+                <input type="password" name="gvPassword" id="gvPassword" pattern="(?=.*[A-Z]).{8,}" placeholder="Create a Password" title="Please use 8 characters, and make sure one is capital (and no they can't be spaces)." required>
+                <br>
+                <br>
+                <input type="submit" id="submit" value="Register" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <br>
+                <p>Already have an account? <a href="finalLogin.html">Sign In</a></p>
+            </form>
+        </div>
+    </center>
+
+    <footer>
+        <hr>
+        <p>Author: RJ Thomas <br> &copy; copyrights not reserved, this is just for fun <a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+    </footer>
+
+</body>
+</html>

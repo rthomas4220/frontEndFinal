@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva;
+}
+
+body {
+    color: gainsboro;
+    background-color: black;
+    background-image: url('https://www.shutterstock.com/image-illustration/gym-weights-under-strong-dramatic-600nw-472696720.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#registrationDiv, #loginDiv, #homePageDiv {
+    background-color: transparent;
+    width: 30%;
+    height: 50%;
+    /*box-shadow: 5px 5px 5px 5px rgb(125, 0, 0);*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+
+#name, #gvUsername, #gainLose,
+#gvPassword, #calIntake, 
+#idealWeight, #currentWeight {
+    width: 75%;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    padding: 0 25px;
+    margin-bottom: 5px;
+    box-shadow: orange;
+}
+
+#submit {
+    width: 85%;
+    height: 40px;
+    border-radius: 50px;
+    color: black;
+    background-color: wheat;
+    font: large bold;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color:wheat;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar a {
+    font-size: 18px;
+    color:wheat;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    color: orange;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 50%;
+
+    padding: 10px;
+}
+
+.content {
+    display: inline;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+#ppl {
+    float: left;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid wheat;
+}
+
+#ppl:hover, #arnold:hover, #broSplit:hover {
+    background-color: wheat;
+    color: orange;
+}
+
+#arnold {
+    float: left;
+    text-align: center;
+    border: 3px solid wheat;
+    width: 30%;
+    margin: 10px;
+}
+
+#broSplit {
+    float: left;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid wheat;
+
+}

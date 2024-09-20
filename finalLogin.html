@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="final.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gainsville Login</title>
+
+    <script>
+
+        alert("*This is a work in progress*")
+
+        function validateLogin(form){
+
+            //Get username and password that user has entered
+            let username = document.getElementById('gvUsername').value.toLowerCase();
+            let password = document.getElementById('gvPassword').value;
+
+            //Check is username exists in local storage
+            if (localStorage.getItem(username)){
+
+                //Check is password exists in local storage
+                if ((localStorage.getItem(username)) == password) {
+                    sessionStorage.setItem("activeUser", username);
+                    form.action = "finalHomePage.html";
+                }
+                else {
+                    alert("Incorrect Password");
+                }
+            }
+            else {
+                alert('Username Not Found');
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <center>
+        <div id="loginDiv">
+            <h1>Login</h1>
+            <form onsubmit="return validateLogin(this)">
+                <input type="text" name="gvUsername" id="gvUsername" placeholder="Username">
+                <br>
+                <br>
+                <input type="password" name="gvPassword" id="gvPassword" placeholder="Password">
+                <br>
+                <br>
+                <input type="submit" id="submit" value="To Gainsville!" style="font-family: Verdana, Geneva;">
+                <br>
+                <p>Don't have an account? <a href="finalRegistration.html">Sign Up</a></p>
+            </form>
+        </div>
+    </center>
+
+    <footer>
+        <hr>
+        <p>Author: RJ Thomas <br> &copy; copyrights not reserved, this is just for fun <a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+    </footer>
+
+    </body>
+    </html>
